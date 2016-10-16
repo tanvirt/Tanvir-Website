@@ -1,0 +1,4 @@
+libs/
+*.log
+*.json
+*.firebaserc
