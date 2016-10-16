@@ -1,4 +1,4 @@
-# Tanvir's Personal Website
+# Personal Website
 
 
 App Structure:
