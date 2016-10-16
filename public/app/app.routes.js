@@ -14,6 +14,12 @@ angular.module('main').config(function($urlRouterProvider, $stateProvider, $loca
         controller: 'AboutController'
     });
 
+    $stateProvider.state('contact', {
+        url: '/contact',
+        templateUrl: 'app/components/contact/contactView.html',
+        controller: 'ContactController'
+    });
+
     $stateProvider.state('404', {
         url: '/404',
         templateUrl: 'app/components/error/errorView.html',

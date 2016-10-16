@@ -2,7 +2,7 @@ angular.module('main').controller('HomeController', function($scope, $firebaseAr
 
 	// App header variables
 	$scope.heading = "Hello There!";
-	$scope.subheading = "Welcome to my domain.";
+	$scope.subheading = "Welcome to my domain (hehe).";
 	$scope.headingImage = "../../assets/img/home.jpg";
 
 	var ref = firebase.database().ref().child("messages");

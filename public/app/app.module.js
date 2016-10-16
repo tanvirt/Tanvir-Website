@@ -23,6 +23,9 @@ angular.module('main').run(function($rootScope, $state) {
 		else if(toState.name == 'about') {
 			$state.go('about');
 		}
+		else if(toState.name == 'contact') {
+			$state.go('contact');
+		}
 		else {
 			$state.go('404');
 		}
