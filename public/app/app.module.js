@@ -5,6 +5,8 @@ angular.module('main', [
 
 angular.module('main').run(function($rootScope, $state) {
 
+	Theme.init();
+
 	// Initialize the Firebase SDK
 	var config = {
 		apiKey: 'AIzaSyDGr8GXuvponsDzuXZdyW-j4exB2uiKJrk',

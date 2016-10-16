@@ -10,6 +10,7 @@
 				<ul>
 					<li ng-repeat="message in messages">
 						<div>{{message.text}}</div>
+						<button class="btn btn-danger" ng-click="messages.$remove(message)">Delete Message</button>
 					</li>
 				</ul>
 				<!-- Main content ends -->
