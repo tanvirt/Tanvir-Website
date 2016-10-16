@@ -4,6 +4,7 @@ angular.module('main', [
 ]);
 
 angular.module('main').run(function($rootScope, $state) {
+
 	// Initialize the Firebase SDK
 	var config = {
 		apiKey: 'AIzaSyDGr8GXuvponsDzuXZdyW-j4exB2uiKJrk',
@@ -16,7 +17,7 @@ angular.module('main').run(function($rootScope, $state) {
 	$rootScope.date = new Date();
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
-		if (toState.name == "home") {
+		if(toState.name == "home") {
 			$state.go('home');
 		}
 		else if(toState.name == 'about') {
@@ -26,4 +27,5 @@ angular.module('main').run(function($rootScope, $state) {
 			$state.go('404');
 		}
 	});
+
 });
