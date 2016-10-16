@@ -1,9 +1,9 @@
 angular.module('main').controller('AboutController', function($scope) {
 	
 	// App header variables
-	$scope.heading = "About Heading";
-	$scope.subheading = "About subheading.";
-	$scope.headingImage = "../../assets/img/splash.jpg";
+	$scope.heading = "About Me";
+	$scope.subheading = "This is what I do.";
+	$scope.headingImage = "../../assets/img/about.jpg";
 
 	// Main content starts
 
