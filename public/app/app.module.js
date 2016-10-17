@@ -8,12 +8,7 @@ angular.module('main').run(function($rootScope, $state) {
 	Theme.init();
 
 	// Initialize the Firebase SDK
-	var config = {
-		apiKey: 'AIzaSyDGr8GXuvponsDzuXZdyW-j4exB2uiKJrk',
-		authDomain: 'tanvir-website.firebaseapp.com',
-		databaseURL: 'https://tanvir-website.firebaseio.com',
-		storageBucket: 'https://tanvir-website.appspot.com'
-	};
+	var config = Client.getFirebaseConfig();
 	firebase.initializeApp(config);
 
 	$rootScope.date = new Date();
