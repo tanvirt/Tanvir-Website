@@ -1,15 +1,23 @@
-angular.module('main').controller('LoginController', function($rootScope, $scope, $state) {
-	
-	/*// App header variables
-	$scope.heading = "Template Heading";
-	$scope.subheading = "Template subheading.";*/
-	$scope.headingImage = "../../assets/img/splash.jpg";
+angular.module('main').controller('LoginController', function($rootScope, $scope, $state, $firebaseAuth) {
 
-	// Main content starts
+	$scope.authObj = $firebaseAuth();
+
+	$scope.error = "";
+
 	$scope.logIn = function() {
-		console.log('login submitted');
-		$rootScope.isAdmin = true;
-		$state.go('home');
+		try {
+			$scope.authObj.$signInWithEmailAndPassword($scope.email, $scope.password)
+			.then(function(firebaseUser) {
+				$rootScope.isAdmin = true;
+				$state.go('home');
+			})
+			.catch(function(error) {
+		  		$scope.error = "Authentication failed";
+			});
+		}
+		catch(error) {
+			$scope.error = "Authentication failed";
+		}
 	}
 
 });
