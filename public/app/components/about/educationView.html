@@ -1,0 +1,28 @@
+<div>
+    <div class="post-preview">
+        <a href="#" ng-click="educationIsVisible = !educationIsVisible">
+            <h1>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                </span>
+                Education
+            </h1>
+        </a>
+    </div>
+    <div ng-init="educationIsVisible = false" ng-show="educationIsVisible">
+        <div class="post-preview">
+            <a href="#">
+                <h2 class="post-title">
+                    University of Florida
+                </h2>
+                <h3 class="post-subtitle">
+                    Bachelor of Science (B.S.), Computer Science, GPA: 3.44
+                </h3>
+            </a>
+            <p class="post-meta">
+                June 2012 – May 2016 (4 years) | Gainesville, Florida Area
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,21 @@
 function ContactForm() {}
 
-ContactForm._listeners = [];
+ContactForm._listeners = {};
 
 ContactForm.addListener = function(listener) {
-    ContactForm._listeners.push(listener);
+    if(!ContactForm.listenerExists(listener)) {
+        ContactForm._listeners[listener.getId()] = listener;
+    }
 }
 
 ContactForm.removeListener = function(listener) {
-    var index = ContactForm._listeners.indexOf(listener);
-    if(index > -1) {
-        array.splice(index, 1);
+    if(ContactForm.listenerExists(listener)) {
+        delete ContactForm._listeners[listener.getId()];
     }
+}
+
+ContactForm.listenerExists = function(listener) {
+    return listener.getId() in ContactForm._listeners;
 }
 
 ContactForm.init = function() {
@@ -29,8 +34,8 @@ ContactForm.init = function() {
                 var firstName = name.match(/\S+/g)[0]; // For Success Message
 
                 // Notify listeners
-                for(var i in ContactForm._listeners) {
-                    ContactForm._listeners[i].onSubmitSuccess(firstName, name, email, phone, message);
+                for(id in ContactForm._listeners) {
+                   ContactForm._listeners[id].onSubmitSuccess(firstName, name, email, phone, message);
                 }
 
                 // Success message

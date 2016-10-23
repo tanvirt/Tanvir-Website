@@ -10,7 +10,7 @@ angular.module('main').controller('ContactController', function($scope, $firebas
 	// create a synchronized array
 	var messages = $firebaseArray(ref);
 
-	var listener = new ContactFormListener();
+	var listener = new ContactFormListener("ContactController");
 	listener.onSubmitSuccess = function(firstName, name, email, phone, message) {
 		// add new items to the array
 		// the message is automatically added to the Firebase database!

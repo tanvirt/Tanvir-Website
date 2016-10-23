@@ -1,0 +1,22 @@
+<div>
+    <div class="post-preview">
+        <a href="#" ng-click="skillsAreVisible = !skillsAreVisible">
+            <h1>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-calculator fa-stack-1x fa-inverse"></i>
+                </span>
+                Skills
+            </h1>
+        </a>
+    </div>
+    <div>
+    <div ng-init="skillsAreVisible = false" ng-show="skillsAreVisible">
+        <div class="post-preview">
+                <p>
+                    Java, C++, etc.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

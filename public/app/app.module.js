@@ -12,6 +12,7 @@ angular.module('main').run(function($rootScope, $state) {
 	firebase.initializeApp(config);
 
 	$rootScope.date = new Date();
+	$rootScope.isAdmin = false;
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
 		if(toState.name == "home") {
@@ -22,6 +23,12 @@ angular.module('main').run(function($rootScope, $state) {
 		}
 		else if(toState.name == 'contact') {
 			$state.go('contact');
+		}
+		else if(toState.name == 'login') {
+			$state.go('login');
+		}
+		else if(toState.name == 'admin' && $rootScope.isAdmin) {
+			$state.go('admin');
 		}
 		else {
 			$state.go('404');
