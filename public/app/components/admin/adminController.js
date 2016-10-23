@@ -1,5 +1,5 @@
 angular.module('main').controller('AdminController', function($rootScope, $scope, $state, $firebaseArray, $firebaseAuth) {
-	
+
 	// App header variables
 	$scope.heading = "Admin Heading";
 	$scope.subheading = "Admin subheading.";
