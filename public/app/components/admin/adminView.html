@@ -8,8 +8,14 @@
 
             	<!-- Main content starts -->
             	<div>
-	            	<button class="btn btn-danger" ng-click="signOut()">Sign Out</button>
-	            </div>
+					<ul>
+						<li ng-repeat="message in messages">
+							<div>{{message.text}}</div>
+							<button class="btn btn-danger" ng-click="messages.$remove(message)">Delete Message</button>
+						</li>
+					</ul>
+					<button class="btn btn-danger" ng-click="signOut()">Sign Out</button>
+				</div>
             	<!-- Main content ends -->
 
 			</div>

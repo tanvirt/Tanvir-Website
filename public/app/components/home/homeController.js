@@ -1,13 +1,10 @@
-angular.module('main').controller('HomeController', function($scope, $firebaseArray) {
+angular.module('main').controller('HomeController', function($scope) {
 
 	// App header variables
 	$scope.heading = "Hello There!";
 	$scope.subheading = "Welcome to my domain (hehe).";
 	$scope.headingImage = "../../assets/img/home.jpg";
 
-	var ref = firebase.database().ref().child("messages");
-
-	// create a synchronized array
-	$scope.messages = $firebaseArray(ref);
+	// Main content starts
 
 });
